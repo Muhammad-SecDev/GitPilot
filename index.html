@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#050505">
     <meta name="description" content="Enterprise-grade Git setup assistant with 3D UI and animations.">
-    <title>Git Setup Assistant</title>
+    <title>Git Setup | Github Code Push Helper</title>
+    
+    <meta name="google-site-verification" content="ZFcbBqBcHcu1wUf1xhAJtH9JzBf-PteB1bUr2aeqv4w" />
+    <link rel="icon" href="data:,">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -12,10 +23,8 @@
 </head>
 <body>
 
-<!-- Full Screen Cursor Glow -->
 <div id="cursor-glow"></div>
 
-<!-- Animated Background Orbs -->
 <div class="bg-orbs">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -23,143 +32,159 @@
 </div>
 
 <header>
-    <h1>Git Setup Assistant</h1>
+    <h1>Git Setup & Code Push Assistant</h1>
     <p>Professional Git Configuration & GitHub Connection Helper</p>
 </header>
 
 <main class="container">
 
-    <!-- STEP 1 -->
-    <section class="card" id="step1-card">
+    <section class="card" id="step1-card" style="--i: 0;">
         <div class="card-content">
             <span class="step-tag">STEP 01</span>
             <h2>Git User Configuration</h2>
             <p>Configure your Git username and email. This will be used for your commit history.</p>
-            
             <div class="input-group">
                 <label for="username">Git Username</label>
-                <input type="text" id="username" name="username" placeholder="e.g., Muhammad-Nexus" autocomplete="off">
+                <input type="text" id="username" name="username" placeholder="e.g., xyz" autocomplete="nickname" required spellcheck="false" autocapitalize="off" aria-describedby="username-help">
+                <small id="username-help" class="help-text">This will be associated with your commits.</small>
             </div>
-
             <div class="input-group">
                 <label for="email">Git Email</label>
-                <input type="email" id="email" name="email" placeholder="e.g., example@gmail.com" autocomplete="off">
+                <input type="email" id="email" name="email" placeholder="e.g., example@gmail.com" autocomplete="email" required spellcheck="false" autocapitalize="off" aria-describedby="email-help">
+                <small id="email-help" class="help-text">Use the email associated with your GitHub account.</small>
             </div>
         </div>
     </section>
 
-    <!-- STEP 2 -->
-    <section class="card" id="step2-card">
+    <section class="card" id="step2-card" style="--i: 1;">
         <div class="card-content">
             <span class="step-tag">STEP 02</span>
             <h2>GitHub Repository</h2>
-            <p>Enter your GitHub repository information. URL will auto-generate if you leave it blank.</p>
-            
+            <p>Enter your GitHub repository information. URL will auto-generate if you leave it blank. (Note: Only HTTPS URLs are supported, SSH is not supported).</p>
             <div class="input-group">
                 <label for="githubUser">GitHub Username</label>
-                <input type="text" id="githubUser" name="githubUser" placeholder="e.g., username" autocomplete="off">
+                <input type="text" id="githubUser" name="githubUser" placeholder="e.g., xyz" autocomplete="off" required spellcheck="false" autocapitalize="off">
             </div>
-
             <div class="input-group">
                 <label for="repository">Repository Name</label>
-                <input type="text" id="repository" name="repository" placeholder="e.g., My-Project" autocomplete="off">
+                <input type="text" id="repository" name="repository" placeholder="e.g., My-Project" autocomplete="organization-title" required spellcheck="false" autocapitalize="off">
             </div>
-
             <div class="input-group">
                 <label for="repoURL">Repository URL (Optional)</label>
-                <input type="url" id="repoURL" name="repoURL" placeholder="https://github.com/username/My-Project.git" autocomplete="off">
+                <input type="url" id="repoURL" name="repoURL" placeholder="https://github.com/username/My-Project.git" autocomplete="off" spellcheck="false" autocapitalize="off">
+            </div>
+            <div class="input-group">
+                <label for="commitMessage">Custom Commit Message (Optional)</label>
+                <input type="text" id="commitMessage" name="commitMessage" placeholder="e.g., feat: initial project setup" autocomplete="off" spellcheck="false">
             </div>
         </div>
     </section>
 
-    <!-- STEP 3 -->
-    <section class="card" id="step3-card">
+    <section class="card" id="step3-card" style="--i: 2;">
         <div class="card-content">
             <span class="step-tag">STEP 03</span>
             <h2>Local Repository</h2>
-            <p>Before connecting to GitHub, initialize your local repository.</p>
+            <p>Before connecting to GitHub, initialize your local repository (if not already done).</p>
             <ul class="list-animate">
                 <li>Open VS Code</li>
                 <li>Open your project folder</li>
                 <li>Open Terminal (<code>Ctrl + `</code>)</li>
-                <li>Run <strong>git init</strong></li>
+                <li>Run <code>git init</code></li>
             </ul>
         </div>
     </section>
 
-    <!-- STEP 4: Mode Selection -->
-    <section class="card">
+    <section class="card" style="--i: 3;">
         <div class="card-content">
             <span class="step-tag">STEP 04</span>
             <h2>Select Setup Mode</h2>
             <p>Choose what you want to do today. The steps above will adapt to your selection.</p>
-            
-            <div class="radio-group">
+            <fieldset class="radio-group">
+                <legend class="visually-hidden">Select Setup Mode</legend>
                 <label class="radio-card">
                     <input type="radio" name="setupMode" value="full" checked>
                     <div class="radio-text">
-                        <span class="radio-title">Full Setup (First Time)</span>
-                        <span class="radio-desc">Git install, config, init, push sab kuch.</span>
+                        <span class="radio-title">1. Full Setup (First Time)</span>
+                        <span class="radio-desc">Git install, config, init, push <span lang="hi">(Everything)</span>.</span>
                     </div>
                 </label>
-                
                 <label class="radio-card">
                     <input type="radio" name="setupMode" value="new">
                     <div class="radio-text">
-                        <span class="radio-title">New Project (Git Already Setup)</span>
-                        <span class="radio-desc">Git init, add, commit, remote aur push.</span>
+                        <span class="radio-title">2. New Project (Git Already Setup)</span>
+                        <span class="radio-desc">Git init, add, commit, remote & push.</span>
                     </div>
                 </label>
-                
                 <label class="radio-card">
                     <input type="radio" name="setupMode" value="update">
                     <div class="radio-text">
-                        <span class="radio-title">Update Existing Project</span>
-                        <span class="radio-desc">Sirf status, add, commit, aur push.</span>
+                        <span class="radio-title">3. Update Existing Project</span>
+                        <span class="radio-desc"><span lang="hi">Only</span> status, add, commit, & push.</span>
                     </div>
                 </label>
-            </div>
+                <label class="radio-card">
+                    <input type="radio" name="setupMode" value="fix">
+                    <div class="radio-text">
+                        <span class="radio-title">4. Fix Git Mistakes (Recovery)</span>
+                        <span class="radio-desc">Undo or change the last commit safely.</span>
+                    </div>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="setupMode" value="ignore">
+                    <div class="radio-text">
+                        <span class="radio-title">5. Setup .gitignore (Ignore Files)</span>
+                        <span class="radio-desc">Create .gitignore to keep junk files off GitHub.</span>
+                    </div>
+                </label>
+            </fieldset>
         </div>
     </section>
 
-    <!-- STEP 5: Generate -->
-    <section class="card">
+    <section class="card" style="--i: 4;">
         <div class="card-content">
             <span class="step-tag">STEP 05</span>
             <h2>Generate Git Commands</h2>
             <p>Generate all required commands for your Git setup. (Press Enter to generate)</p>
-            
             <div class="btn-group">
-                <button id="generateButton" class="btn btn-primary">Generate Commands</button>
-                <button id="copyButton" class="btn btn-secondary" disabled>Copy Commands</button>
-                <button id="clearButton" class="btn btn-danger">Clear</button>
+                <button type="button" id="generateButton" class="btn btn-primary">Generate Commands</button>
+                <button type="button" id="copyButton" class="btn btn-secondary" disabled>Copy Commands</button>
+                <button type="button" id="clearButton" class="btn btn-danger">Reset</button>
             </div>
         </div>
     </section>
 
-    <!-- OUTPUT -->
-    <section class="card">
+    <section class="card" style="--i: 5;">
         <div class="card-content">
             <div class="output-header-flex">
                 <div>
                     <span class="step-tag">OUTPUT</span>
                     <h2>Generated Commands</h2>
                 </div>
-                <!-- OS Toggle Switch -->
-                <div class="os-toggle">
-                    <button class="os-btn active" data-os="win">Windows</button>
-                    <button class="os-btn" data-os="mac">Mac</button>
+                <div class="os-toggle" role="group" aria-label="Operating System Selection">
+                    <button type="button" class="os-btn active" data-os="win" aria-pressed="true">Windows</button>
+                    <button type="button" class="os-btn" data-os="mac" aria-pressed="false">Mac</button>
+                    <button type="button" class="os-btn" data-os="linux" aria-pressed="false">Linux</button>
                 </div>
             </div>
-            
             <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="dot dot-red"></div>
-                    <div class="dot dot-yellow"></div>
-                    <div class="dot dot-green"></div>
+                <div class="terminal-header os-win">
+                    <!-- Windows Icon -->
+                    <div class="os-icon os-icon-win">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#8b949e"><path d="M0 3.449L9.75 2.1V11.5H0V3.449ZM9.75 12.5V21.9L0 20.551V12.5H9.75ZM10.75 1.95L24 0V11.5H10.75V1.95ZM24 12.5V24L10.75 22.05V12.5H24Z"></path></svg>
+                    </div>
+                    <!-- Mac Dots -->
+                    <div class="os-icon os-icon-mac">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                    </div>
+                    <!-- Linux Icon -->
+                    <div class="os-icon os-icon-linux">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b949e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
                     <span id="terminal-title" class="terminal-title">PowerShell</span>
                 </div>
-                <pre id="output"><span class="prompt">PS C:\Project></span> Commands will appear here after clicking "Generate"...</pre>
+                <pre id="output" role="status" aria-live="polite" aria-atomic="true"><span class="prompt">PS C:\Project></span> Commands will appear here after clicking "Generate"...</pre>
             </div>
         </div>
     </section>
@@ -170,8 +195,8 @@
     <p>&copy; 2025 - 2026 Git Setup Assistant. Crafted with Precision.</p>
 </footer>
 
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
