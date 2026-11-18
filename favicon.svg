@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+ <defs>
+  <linearGradient id="stem" x1="486" y1="360" x2="486" y2="690" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#ff3028"/><stop offset=".34" stop-color="#d52c91"/><stop offset=".72" stop-color="#5544ed"/><stop offset="1" stop-color="#087cff"/>
+  </linearGradient>
+  <linearGradient id="branch" x1="500" y1="790" x2="930" y2="490" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#087cff"/><stop offset=".48" stop-color="#00b8ee"/><stop offset="1" stop-color="#12e85c"/>
+  </linearGradient>
+  <linearGradient id="red" x1="380" y1="100" x2="580" y2="365" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#ff382d"/><stop offset=".6" stop-color="#ff174e"/><stop offset="1" stop-color="#e51b8b"/>
+  </linearGradient>
+  <linearGradient id="blue" x1="380" y1="675" x2="590" y2="930" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#168dff"/><stop offset="1" stop-color="#00b9f5"/>
+  </linearGradient>
+  <linearGradient id="green" x1="865" y1="565" x2="1080" y2="355" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#00d8b5"/><stop offset=".5" stop-color="#00ed5a"/><stop offset="1" stop-color="#4bff19"/>
+  </linearGradient>
+  <linearGradient id="white" x1="890" y1="680" x2="1180" y2="920" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff"/><stop offset="1" stop-color="#f4f5f7"/>
+  </linearGradient>
+  <filter id="redGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="28"/></filter>
+  <filter id="blueGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="30"/></filter>
+  <filter id="greenGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="27"/></filter>
+  <filter id="branchGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="23"/></filter>
+  <filter id="promptShadow" x="-40%" y="-40%" width="180%" height="180%">
+   <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="b"/><feOffset in="b" dy="5" result="o"/>
+   <feComponentTransfer in="o" result="s"><feFuncA type="linear" slope=".42"/></feComponentTransfer>
+   <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+ </defs>
+ <!-- Soft colored glow -->
+ <g fill="none" stroke-linecap="round">
+  <path d="M486 360 V665" stroke="#b92bb1" stroke-width="105" filter="url(#redGlow)" opacity=".52"/>
+  <path d="M580 725 L875 520" stroke="#05baff" stroke-width="115" filter="url(#branchGlow)" opacity=".72"/>
+  <circle cx="486" cy="230" r="140" fill="none" stroke="#ff2525" stroke-width="90" filter="url(#redGlow)" opacity=".65"/>
+  <circle cx="486" cy="805" r="140" fill="none" stroke="#087cff" stroke-width="90" filter="url(#blueGlow)" opacity=".72"/>
+  <circle cx="975" cy="468" r="130" fill="none" stroke="#00ed5a" stroke-width="90" filter="url(#greenGlow)" opacity=".7"/>
+ </g>
+ <!-- Branch connectors -->
+ <g fill="none" stroke-linecap="round">
+  <path d="M486 365 V665" stroke="url(#stem)" stroke-width="82"/>
+  <path d="M580 725 L875 520" stroke="url(#branch)" stroke-width="82"/>
+ </g>
+ <!-- Vector rings; even-odd paths create genuinely transparent centers -->
+ <path fill="url(#red)" fill-rule="evenodd" d="
+  M486 90 A140 140 0 1 0 486 370 A140 140 0 1 0 486 90 Z
+  M486 165 A65 65 0 1 1 486 295 A65 65 0 1 1 486 165 Z"/>
+ <path fill="url(#blue)" fill-rule="evenodd" d="
+  M486 665 A140 140 0 1 0 486 945 A140 140 0 1 0 486 665 Z
+  M486 733 A72 72 0 1 1 486 877 A72 72 0 1 1 486 733 Z"/>
+ <path fill="url(#green)" fill-rule="evenodd" d="
+  M975 338 A130 130 0 1 0 975 598 A130 130 0 1 0 975 338 Z
+  M975 404 A64 64 0 1 1 975 532 A64 64 0 1 1 975 404 Z"/>
+ <!-- Glossy rim accents -->
+ <g fill="none" stroke="#fff" opacity=".34">
+  <circle cx="486" cy="230" r="137" stroke-width="4"/>
+  <circle cx="486" cy="805" r="137" stroke-width="4"/>
+  <circle cx="975" cy="468" r="127" stroke-width="4"/>
+ </g>
+ <!-- White terminal prompt -->
+ <g fill="none" stroke="url(#white)" stroke-width="61" stroke-linecap="round" stroke-linejoin="round" filter="url(#promptShadow)">
+  <path d="M880 697 L1010 790 L875 885"/><path d="M1055 890 H1235"/>
+ </g>
+</svg>

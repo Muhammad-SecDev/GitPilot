@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="Struggling with Git errors? Generate safe, automated Git commands for Windows, Mac &amp; Linux. Push your code to GitHub easily in seconds. 100% Free!">
+    <meta name="author" content="GitPilot">
+    <meta name="keywords" content="git, github, git setup, git push, git commands, powershell, bash, zsh, gitignore, git config, version control">
+
+    <title>GitPilot | Git Push Command Generator</title>
+
+
+    <!-- Search Engine Verification -->
+    <meta name="google-site-verification" content="ZFcbBqBcHcu1wUf1xhAJtH9JzBf-PteB1bUr2aeqv4w" />
+
+    <!-- Favicon (SVG git-branch icon) -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="mask-icon" href="favicon.svg" color="#58a6ff">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!-- Security Headers (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; manifest-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GitPilot | Git Push Command Generator">
+    <meta property="og:description" content="Struggling with Git errors? Generate safe, automated Git commands for Windows, Mac &amp; Linux. Push your code to GitHub easily in seconds. 100% Free!">
+    <meta property="og:url" content="https://github-setup-assistant.vercel.app/">
+    <meta property="og:site_name" content="GitPilot">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- OG Image Tags (JPG format) -->
+    <meta property="og:image" content="https://github-setup-assistant.vercel.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="GitPilot | Git Push Command Generator">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GitPilot | Git Push Command Generator">
+    <meta name="twitter:description" content="Struggling with Git errors? Generate safe, automated Git commands for Windows, Mac &amp; Linux. Push your code to GitHub easily in seconds. 100% Free!">
+    
+    <!-- Twitter Image Tags -->
+    <meta name="twitter:image" content="https://github-setup-assistant.vercel.app/og-image.png">
+    <meta name="twitter:image:alt" content="GitPilot | Git Push Command Generator">
+
+    <!-- Performance: preconnect to font origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "GitPilot | Git Push Command Generator",
+        "url": "https://github-setup-assistant.vercel.app/",
+        "description": "Struggling with Git errors? Generate safe, automated Git commands for Windows, Mac & Linux. Push your code to GitHub easily in seconds. 100% Free!",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Git user configuration",
+            "GitHub repository connection",
+            "Shell-safe command generation (PowerShell, bash, zsh)",
+            "Cross-platform support",
+            ".gitignore generator",
+            "Git recovery commands"
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<!-- Accessibility: Skip to main content -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Custom Cursor Elements -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+</div>
+
+<!-- FIXED NAVBAR (Top par chipka rahega) -->
+<header class="top-nav">
+    <div class="nav-content">
+        <!-- LEFT SIDE: Logo & Name -->
+        <div class="brand-logo">
+            <img src="favicon.svg" alt="GitPilot Logo" class="logo-icon" fetchpriority="high">
+            <span>GitPilot</span>
+        </div>
+
+        <!-- CENTER SIDE: Main Title & Tagline -->
+        <div class="nav-center-text">
+            <h1>Git Push Command Generator</h1>
+            <p>Push your code to GitHub easily. Automate your Git workflow.</p>
+        </div>
+
+        <!-- RIGHT SIDE: Reset Button -->
+        <div class="header-actions">
+            <button type="button" id="clearButton" class="btn btn-danger btn-header-reset" title="Clear all fields and reset to defaults">Clear Form</button>
+        </div>
+    </div>
+</header>
+
+<main class="container" id="main-content">
+
+    <!-- Uske baad aapka Step 1 wala code start hoga -->
+    <section class="card" id="step1-card">
+        <div class="card-content">
+            <span class="step-tag">STEP 01</span>
+            <h2>Git User Configuration</h2>
+            <p>Configure your Git username and email. This will be used for your commit history.</p>
+            <div class="input-group">
+                <label for="username">Git Username</label>
+                <input type="text" id="username" name="username" placeholder="e.g., xyz" autocomplete="username" required spellcheck="false" autocapitalize="off" aria-describedby="username-help" maxlength="100">                <small id="username-help" class="help-text">This will be associated with your commits.</small>
+            </div>
+            <div class="input-group">
+                <label for="email">Git Email</label>
+                <input type="email" id="email" name="email" placeholder="e.g., example@gmail.com" autocomplete="email" required spellcheck="false" autocapitalize="off" inputmode="email" enterkeyhint="next" aria-describedby="email-help" maxlength="254">
+                <small id="email-help" class="help-text">Use the email associated with your GitHub account.</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="card" id="step2-card">
+        <div class="card-content">
+            <span class="step-tag">STEP 02</span>
+            <h2>GitHub Repository</h2>
+            <p>Enter your GitHub repository information. URL will auto-generate if you leave it blank. (Note: Only HTTPS URLs are supported, SSH is not supported).</p>
+            <div class="input-group">
+                <label for="githubUser">GitHub Username</label>
+                <input type="text" id="githubUser" name="githubUser" placeholder="e.g., xyz" autocomplete="off" required spellcheck="false" autocapitalize="off" aria-describedby="githubUser-help" maxlength="39">
+                <small id="githubUser-help" class="help-text">Your GitHub username (max 39 chars, alphanumeric and hyphens).</small>
+            </div>
+            <div class="input-group">
+                <label for="repository">Repository Name</label>
+                <input type="text" id="repository" name="repository" placeholder="e.g., My-Project" autocomplete="off" required spellcheck="false" autocapitalize="off" aria-describedby="repository-help" maxlength="100">
+                <small id="repository-help" class="help-text">Repository name on GitHub (letters, numbers, dots, hyphens, underscores).</small>
+            </div>
+            <div class="input-group">
+                <label for="repoURL">Repository URL (Optional)</label>
+                <input type="url" id="repoURL" name="repoURL" placeholder="https://github.com/username/My-Project.git" autocomplete="off" spellcheck="false" autocapitalize="off" inputmode="url" enterkeyhint="next" aria-describedby="url-preview">
+                <small class="help-text" id="url-preview"></small>
+            </div>
+        </div>
+    </section>
+
+    <section class="card" id="commit-card">
+        <div class="card-content">
+            <span class="step-tag">COMMIT CONFIG</span>
+            <h2>Commit Message</h2>
+            <p>Define a custom commit message for your changes.</p>
+            <div class="input-group">
+                <label for="commitMessage">Custom Commit Message (Optional)</label>
+                <input type="text" id="commitMessage" name="commitMessage" placeholder="e.g., feat: initial project setup" autocomplete="off" spellcheck="false" maxlength="200">
+                <small class="help-text">Max 200 characters. Leave empty to use a sensible default.</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="card" id="step3-card">
+        <div class="card-content">
+            <span class="step-tag">STEP 03</span>
+            <h2>Local Repository</h2>
+            <p>Before connecting to GitHub, initialize your local repository (if not already done).</p>
+            <ul class="list-animate">
+                <li>Open VS Code</li>
+                <li>Open your project folder</li>
+                <li>Open Terminal (<code>Ctrl + `</code>)</li>
+                <li>Run <code>git init</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card-content">
+            <span class="step-tag">STEP 04</span>
+            <h2>Select Setup Mode</h2>
+            <p>Choose what you want to do today. The steps above will adapt to your selection.</p>
+            <fieldset class="radio-group">
+                <legend class="visually-hidden">Select Setup Mode</legend>
+                <label class="radio-card">
+                    <input type="radio" name="setupMode" value="full" checked>
+                    <div class="radio-text">
+                        <span class="radio-title">1. Full Setup (First Time)</span>
+                        <span class="radio-desc">Git version check, config, init, push (Everything).</span>
+                    </div>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="setupMode" value="new">
+                    <div class="radio-text">
+                        <span class="radio-title">2. New Project (Git Already Setup)</span>
+                        <span class="radio-desc">Git init, add, commit, remote &amp; push.</span>
+                    </div>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="setupMode" value="update">
+                    <div class="radio-text">
+                        <span class="radio-title">3. Update Existing Project</span>
+                        <span class="radio-desc">Update .gitignore, untrack secrets, then status, add, commit, &amp; push.</span>
+                    </div>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="setupMode" value="fix">
+                    <div class="radio-text">
+                        <span class="radio-title">4. Fix Git Mistakes (Recovery)</span>
+                        <span class="radio-desc">Undo or change the last commit safely.</span>
+                    </div>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="setupMode" value="ignore">
+                    <div class="radio-text">
+                        <span class="radio-title">5. Setup .gitignore (Ignore Files)</span>
+                        <span class="radio-desc">Create .gitignore to keep junk files off GitHub.</span>
+                    </div>
+                </label>
+            </fieldset>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card-content">
+            <span class="step-tag">STEP 05</span>
+            <h2>Generate Git Commands</h2>
+            <p>Generate all required commands for your Git setup. <kbd>Enter</kbd> or <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to generate. <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> to copy.</p>
+            <div class="btn-group">
+                <button type="button" id="generateButton" class="btn btn-primary" aria-keyshortcuts="Ctrl+Enter">Generate Commands</button>
+                <button type="button" id="copyButton" class="btn btn-secondary" disabled aria-keyshortcuts="Ctrl+Shift+C">Copy Commands</button>
+                <button type="button" id="downloadButton" class="btn btn-secondary" disabled>Download Script</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="card-content">
+            <div class="output-header-flex">
+                <div>
+                    <span class="step-tag">OUTPUT</span>
+                    <h2>Generated Commands</h2>
+                </div>
+                <div class="output-controls">
+                    <div class="os-toggle" role="group" aria-label="Operating System Selection">
+                        <button type="button" class="os-btn active" data-os="win" aria-pressed="true">Windows</button>
+                        <button type="button" class="os-btn" data-os="mac" aria-pressed="false">Mac</button>
+                        <button type="button" class="os-btn" data-os="linux" aria-pressed="false">Linux</button>
+                    </div>
+                    <div class="history-control">
+                        <button type="button" id="historyButton" class="icon-btn" aria-label="View command history" aria-haspopup="true" aria-expanded="false" title="Command history" disabled>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><path d="M12 7v5l4 2"/></svg>
+                        </button>
+                        <span id="cmdCount" class="cmd-count-badge" aria-live="polite" title="Total generations this session">0</span>
+                    </div>
+                </div>
+            </div>
+            <ul id="historyList" class="history-list" role="list" aria-label="Recent generations" hidden></ul>
+            <div class="terminal-window">
+                <div class="terminal-header os-win">
+                    <div class="os-icon os-icon-win">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#8b949e" aria-hidden="true"><path d="M0 3.449L9.75 2.1V11.5H0V3.449ZM9.75 12.5V21.9L0 20.551V12.5H9.75ZM10.75 1.95L24 0V11.5H10.75V1.95ZM24 12.5V24L10.75 22.05V12.5H24Z"></path></svg>
+                    </div>
+                    <div class="os-icon os-icon-mac">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                    </div>
+                    <div class="os-icon os-icon-linux">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b949e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
+                    <span id="terminal-title" class="terminal-title">PowerShell</span>
+                    <span id="offline-indicator" class="offline-indicator" hidden aria-live="polite">Offline</span>
+                </div>
+                <pre id="output"></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="card" id="features-card">
+        <div class="card-content">
+            <span class="step-tag">WHY GITPILOT?</span>
+            <h2>Why Use Our Git Command Generator?</h2>
+            <p>GitPilot is designed to save you from frustrating terminal errors. Whether you are pushing a new project for the first time or updating an existing one, our tool ensures your commands are 100% accurate.</p>
+            <ul class="list-animate">
+                <li><strong>Syntax-Perfect:</strong> Generate accurately quoted commands every time for any OS.</li>
+                <li><strong>Built-in Secret Protection:</strong> Automatically generates <code>.gitignore</code> rules to prevent leaking <code>.env</code> files.</li>
+                <li><strong>Cross-Platform Support:</strong> Works perfectly on Windows (PowerShell), macOS (zsh), and Linux (bash).</li>
+                <li><strong>100% Safe & Private:</strong> All commands are generated locally in your browser. We don't store your data.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card" id="how-to-card">
+        <div class="card-content">
+            <span class="step-tag">HOW IT WORKS</span>
+            <h2>How to Push Code to GitHub</h2>
+            <p>Follow these simple steps to generate your automated Git commands:</p>
+            <ol class="list-animate">
+                <li><strong>Enter Details:</strong> Add your Git username, email, and GitHub repository URL.</li>
+                <li><strong>Choose Mode:</strong> Select what you want to do.</li>
+                <li><strong>Generate & Copy:</strong> Select your OS and click "Generate Commands". Copy them and paste them into your terminal.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="card" id="faq-card">
+        <div class="card-content">
+            <span class="step-tag">FAQS</span>
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>What is a Git push command generator?</h3>
+                <p>It is a tool that automatically creates the correct terminal commands to upload your local code to a remote GitHub repository, eliminating syntax errors and confusion.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I push my code to GitHub for the first time?</h3>
+                <p>You need to initialize Git, add your files, commit them, link the remote repository, and push. GitPilot's "Full Setup" mode generates all these commands in the correct order.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Are my credentials safe?</h3>
+                <p>Absolutely. GitPilot runs entirely in your browser using JavaScript. We do not send your username, email, or repository details to any server.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 - 2026 GitPilot. Crafted with Precision.</p>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
