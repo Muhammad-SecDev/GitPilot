@@ -1,0 +1,20 @@
+{
+    "name": "GitPilot | Git Push Command Generator",
+    "short_name": "GitPilot",
+    "description": "Struggling with Git errors? Generate safe, automated Git commands for Windows, Mac & Linux. Push your code to GitHub easily in seconds.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#050505",
+    "orientation": "portrait-primary",
+    "lang": "en",
+    "categories": ["developer", "productivity", "utilities"],
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+﻿# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+.vercel/
+dist/
+build/
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+client_secret*.json
+.npmrc
+.netrc
+
+# OS/editor files
+.DS_Store
+Thumbs.db
